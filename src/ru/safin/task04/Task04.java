@@ -10,37 +10,28 @@
 package ru.safin.task04;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Task04 {
     public static void main(String[] args) {
-        int comp, user, count = 0;
-        do{
-            comp = (int)(Math.random()*100+1);
-        }
-        while(comp == 0);
+        Random rand = new Random();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите целое число из отрезка от 1 до 100");
-        if(sc.hasNextInt()){
-            do{
-                user = sc.nextInt();
-                if(user < 0||user == 0 || user > 100){
-                    System.out.println("Вы ввели число не из заданного диапазона или 0");
-                    System.out.println("Повторите ввод");
-                }
-                else{
-                    ++count;
-                    if(user == comp){
-                        System.out.println("Вы угадали с "+count+" попытки");
-                    }
-                    else{
-                        if(user < comp)
-                        System.out.println("Число больше");
-                        else System.out.println("Число меньше");
-                    }
-                }
+        int comp, user, count = 0;
+        do comp = rand.nextInt(100);
+        while (comp == 0);
+        System.out.println("Введите целое число от 1 до 100");
+        System.out.println("Для выхода из программы нажмите \"-1\"");
+        if (!sc.hasNextInt()) System.out.println("Ошибка! Вы ввели не целое число!");
+        do {
+            user = sc.nextInt();
+            if (user < 1 || user > 100) {
+                System.out.println("Вы ввели число не из диапазона от 1 до 100 или ввели 0");
+                System.out.println("Повторите ввод");
             }
-            while(user!=comp);
+            count++;
+            if (user == comp) System.out.println("Вы угадали с " + count + " попытки");
+            else System.out.println(user < comp ? "Число больше" : "Число меньше");
         }
-        else System.out.println("Ошибка. Введено не целое число");
+        while (user != -1);
     }
 }
