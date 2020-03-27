@@ -20,5 +20,7 @@ public class Task05 {
             System.out.println("Минимальное число из двух: " + a);
         if (a > b)
             System.out.println("Минимальное число из двух: " + b);
+        if (a == b)
+            System.out.println("Числа " + a + " и " + b + " равны");
     }
 }
