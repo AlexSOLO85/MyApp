@@ -3,9 +3,6 @@ package ru.safin.task09;
 public abstract class Animal {
     private String name;
 
-    public Animal() {
-        this.name = this.getAnimalName();
-    }
     public Animal(String name) {
         this.name = name;
     }

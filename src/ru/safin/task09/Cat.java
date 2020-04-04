@@ -1,6 +1,6 @@
 package ru.safin.task09;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Run {
     private int age;
     private int height;
 
@@ -25,5 +25,9 @@ public class Cat extends Animal {
     @Override
     public String getAnimalName() {
         return "Кошка";
+    }
+
+    public void run() {
+        System.out.println("Животное бегает");
     }
 }

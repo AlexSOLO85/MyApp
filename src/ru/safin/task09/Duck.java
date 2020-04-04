@@ -1,10 +1,10 @@
 package ru.safin.task09;
 
-public class Mouse extends Animal implements Run, Swim  {
+public class Duck extends Animal implements Fly, Run, Swim {
     private int age;
     private int height;
 
-    public Mouse(String name, int age, int height) {
+    public Duck(String name, int age, int height) {
         super(name);
         this.age = age;
         this.height = height;
@@ -24,7 +24,11 @@ public class Mouse extends Animal implements Run, Swim  {
 
     @Override
     public String getAnimalName() {
-        return "Мышь";
+        return "Утка";
+    }
+
+    public void fly() {
+        System.out.println("Животное летает");
     }
 
     public void run() {
@@ -34,5 +38,4 @@ public class Mouse extends Animal implements Run, Swim  {
     public void swim() {
         System.out.println("Животное плавает");
     }
-
 }

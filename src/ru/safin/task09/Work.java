@@ -8,35 +8,53 @@
  */
 package ru.safin.task09;
 
+import static java.lang.System.*;
+
 public class Work {
     public static void main(String[] args) {
 
         Animal cat = new Cat("Том", 3, 20);
         Animal mouse = new Mouse("Джерри", 3, 5);
+        Duck duck = new Duck("Дональд", 5, 10);
 
-        System.out.println("Имя: " + cat.getName());
-        System.out.println("Имя животного: " + cat.getAnimalName());
-        System.out.println("Возрасть: " + ((Cat) cat).getAge());
-        System.out.println("Высота: " + ((Cat) cat).getHeight());
-        System.out.println("------------------------");
-        System.out.println("Имя: " + mouse.getName());
-        System.out.println("Имя животного: " + mouse.getAnimalName());
-        System.out.println("Возраст: " + ((Mouse) mouse).getAge());
-        System.out.println("Высота: " + ((Mouse) mouse).getHeight());
-        System.out.println("------------------------");
+        out.println("Имя: " + cat.getName());
+        out.println("Имя животного: " + cat.getAnimalName());
+        out.println("Возрасть: " + ((Cat) cat).getAge());
+        out.println("Высота: " + ((Cat) cat).getHeight());
+        ((Cat) cat).run();
+        out.println("------------------------");
+        out.println("Имя: " + mouse.getName());
+        out.println("Имя животного: " + mouse.getAnimalName());
+        out.println("Возраст: " + ((Mouse) mouse).getAge());
+        out.println("Высота: " + ((Mouse) mouse).getHeight());
+        ((Mouse) mouse).run();
+        ((Mouse) mouse).swim();
+        out.println("-------------------------");
+        out.println("Имя: " + duck.getName());
+        out.println("Имя животного: " + duck.getAnimalName());
+        out.println("Возраст: " + duck.getAge());
+        out.println("Высота: " + duck.getHeight());
+        duck.fly();
+        duck.run();
+        duck.swim();
+        out.println("*************************");
 
         boolean isMouse = cat instanceof Mouse;
-        System.out.println("Том это мышь? " + isMouse);
+        out.println("Том это мышь? " + isMouse);
         boolean isCat = cat instanceof Cat;
-        System.out.println("Том это кошка? " + isCat);
+        out.println("Том это кошка? " + isCat);
+        boolean isDuck = cat instanceof Duck;
+        out.println("Том это утка? " + isDuck);
         boolean isAnimal = cat instanceof Animal;
-        System.out.println("Том это животное? " + isAnimal);
-        System.out.println("------------------------");
+        out.println("Том это животное? " + isAnimal);
+        out.println("------------------------");
         boolean IsMouse = mouse instanceof Mouse;
-        System.out.println("Джерри это мышь? " + IsMouse);
+        out.println("Джерри это мышь? " + IsMouse);
         boolean IsCat = mouse instanceof Cat;
-        System.out.println("Джерри это кошка? " + IsCat);
+        out.println("Джерри это кошка? " + IsCat);
+        boolean IsDuck = mouse instanceof Duck;
+        out.println("Джерри это утка? " + IsDuck);
         boolean IsAnimal = mouse instanceof Animal;
-        System.out.println("Джерри это животное? " + IsAnimal);
+        out.println("Джерри это животное? " + IsAnimal);
     }
 }
