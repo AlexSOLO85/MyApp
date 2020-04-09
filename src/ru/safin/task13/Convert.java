@@ -1,13 +1,9 @@
-/*Реализовать два класса: договор и акт. В каждом сделать поля: номер, дата, список товаров (массив строк).
-Написать класс со статическим методом конвертации договора в акт (на вход передавать договор, на выходе получаем акт).
- */
 package ru.safin.task13;
 
 import java.util.Arrays;
 
 public class Convert {
-    public static void main(String[] args) {
-
+    public static void conversation() {
         Contract contract = new Contract();
         Act act = new Act();
 

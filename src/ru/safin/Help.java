@@ -12,7 +12,7 @@ import ru.safin.task09.Work;
 import ru.safin.task10.Machine;
 import ru.safin.task11.Calc;
 import ru.safin.task12.Count;
-import ru.safin.task13.Convert;
+import ru.safin.task13.Task13;
 import ru.safin.task14.Inference;
 
 import java.util.Scanner;
@@ -53,7 +53,7 @@ public class Help {
             case 10: Machine.main(new String[]{});break;
             case 11: Calc.main(new String[]{});break;
             case 12: Count.main(new String[]{});break;
-            case 13: Convert.main(new String[]{});break;
+            case 13: Task13.main(new String[]{});break;
             case 14: Inference.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
