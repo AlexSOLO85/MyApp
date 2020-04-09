@@ -3,6 +3,7 @@
  */
 package ru.safin.task11;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Calc {
@@ -47,11 +48,11 @@ public class Calc {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
         System.out.println("Введите первое число: ");
-        double a = sc.nextInt();
+        double a = sc.nextDouble();
         System.out.println("Введите второе число: ");
-        double b = sc.nextInt();
+        double b = sc.nextDouble();
         System.out.println("Введите оперцию: ");
         char operator = sc.next().charAt(0);
 
