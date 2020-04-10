@@ -12,8 +12,8 @@ public class Inference {
         out.println("Имя: " + amateur.getName());
         out.println("Рост: " + amateur.getHeight());
         out.println("Возраст: " + amateur.getAge());
-        amateur.run();
-        amateur.swim();
+        out.println(amateur.runSlowly());
+        out.println(amateur.swimSlowly());
 
         out.println("****************************");
 
@@ -21,7 +21,7 @@ public class Inference {
         out.println("Имя: " + sportsman.getName());
         out.println("Рост: " + sportsman.getHeight());
         out.println("Возраст: " + sportsman.getAge());
-        sportsman.run();
-        sportsman.swim();
+        out.println(sportsman.runFast());
+        out.println(sportsman.swimFast());
     }
 }

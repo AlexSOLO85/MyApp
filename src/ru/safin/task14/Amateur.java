@@ -1,6 +1,6 @@
 package ru.safin.task14;
 
-public class Amateur extends Human implements Run, Swim {
+public class Amateur extends Human {
     private int height;
     private int age;
 
@@ -16,14 +16,6 @@ public class Amateur extends Human implements Run, Swim {
 
     public int getAge() {
         return age;
-    }
-
-    public void run() {
-        Run.runSlowly();
-    }
-
-    public void swim() {
-        Swim.swimSlowly();
     }
 
     @Override

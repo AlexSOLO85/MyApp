@@ -27,15 +27,18 @@ public class Duck extends Animal implements Fly, Run, Swim {
         return "Утка";
     }
 
-    public void fly() {
-        System.out.println("Животное летает");
+    @Override
+    public String getRun() {
+        return "Class Duck Run";
     }
 
-    public void run() {
-        System.out.println("Животное бегает");
+    @Override
+    public String getFly() {
+        return "Class Duck Fly";
     }
 
-    public void swim() {
-        System.out.println("Животное плавает");
+    @Override
+    public String getSwim() {
+        return "Class Duck Swim";
     }
 }

@@ -27,12 +27,13 @@ public class Mouse extends Animal implements Run, Swim  {
         return "Мышь";
     }
 
-    public void run() {
-        System.out.println("Животное бегает");
+    @Override
+    public String getRun() {
+        return "Class Mouse Run";
     }
 
-    public void swim() {
-        System.out.println("Животное плавает");
+    @Override
+    public String getSwim() {
+        return "Class Mouse Swim";
     }
-
 }

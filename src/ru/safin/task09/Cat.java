@@ -27,7 +27,8 @@ public class Cat extends Animal implements Run {
         return "Кошка";
     }
 
-    public void run() {
-        System.out.println("Животное бегает");
+    @Override
+    public String getRun() {
+        return "Class Cat Run";
     }
 }
