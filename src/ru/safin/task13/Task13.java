@@ -5,6 +5,7 @@ package ru.safin.task13;
 
 public class Task13 {
     public static void main(String[] args) {
-        Convert.conversation();
+        Contract contract = new Contract(40, "20.02.2010", "Товары");
+        Act act = Convert.conversation(contract);
     }
 }

@@ -3,27 +3,15 @@ package ru.safin.task13;
 import java.util.Arrays;
 
 public class Convert {
-    public static void conversation() {
-        Contract contract = new Contract();
+    public static Act conversation(Contract contract){
         Act act = new Act();
+        act.number = contract.number;
+        act.date = contract.date;
+        act.name = contract.name;
+        System.out.println(act.number);
+        System.out.println(act.date);
+        System.out.println(Arrays.toString(act.name));
 
-        int numberContract = contract.getNumber();
-        act.setNumber(numberContract);
-        int numberAct = act.setNumber(numberContract);
-
-        String dateContract = contract.getDate();
-        act.setDate(dateContract);
-        String numberDate = act.setDate(dateContract);
-
-        String nameContract = Arrays.toString(contract.getName());
-        String nameAct = Arrays.toString(act.setArray(contract.getName()));
-
-        System.out.println("Номер договора: " + numberContract);
-        System.out.println("Дата договора: " + dateContract);
-        System.out.println("Наименование товаров договора: " + nameContract);
-        System.out.println("----------------------------------------------");
-        System.out.println("Номер акта: " + numberAct);
-        System.out.println("Дата акта: " + numberDate);
-        System.out.println("Наименование товаров акта: " + nameAct);
+        return act;
     }
 }
