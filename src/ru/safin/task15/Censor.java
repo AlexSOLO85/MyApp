@@ -6,7 +6,7 @@ package ru.safin.task15;
 
 import java.util.Scanner;
 
-class Censor {
+public class Censor {
     public static void main(String[] args) {
         String name;
         Scanner sc = new Scanner(System.in);

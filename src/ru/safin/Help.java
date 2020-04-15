@@ -14,6 +14,8 @@ import ru.safin.task11.Calc;
 import ru.safin.task12.Count;
 import ru.safin.task13.Task13;
 import ru.safin.task14.Inference;
+import ru.safin.task15.Censor;
+import ru.safin.task18.Mother;
 
 import java.util.Scanner;
 
@@ -38,7 +40,9 @@ public class Help {
                     "11 задача: Калькулятор \n" +
                     "12 задача: Счетчик количества создаваемых объектов \n" +
                     "13 задача: Статический метод конвертации \n" +
-                    "14 задача: Реализация интерфейсов \n");
+                    "14 задача: Реализация интерфейсов \n" +
+                    "15 задача: Цензор \n" +
+                    "16 задача: Воспитанный ребенок \n");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -55,6 +59,8 @@ public class Help {
             case 12: Count.main(new String[]{});break;
             case 13: Task13.main(new String[]{});break;
             case 14: Inference.main(new String[]{});break;
+            case 15: Censor.main(new String[]{});break;
+            case 16: Mother.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }
