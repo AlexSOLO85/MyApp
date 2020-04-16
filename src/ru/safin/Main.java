@@ -3,7 +3,7 @@ package ru.safin;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         String otvet;
         boolean play = true;

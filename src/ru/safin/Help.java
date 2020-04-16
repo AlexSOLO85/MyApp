@@ -21,10 +21,10 @@ import java.util.Scanner;
 
 public class Help {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int i;
-        System.out.println("Введите номер задачи от 1 до 14, 0 - описание задач:");
+        System.out.println("Введите номер задачи от 1 до 16, 0 - описание задач:");
         i = sc.nextInt();
         switch (i) {
             case 0: System.out.println("1 задача: Расчет стоимости бензина \n" +
