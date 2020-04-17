@@ -10,25 +10,19 @@
 */
 package ru.safin.task10;
 
+import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static ru.safin.task10.Product.COFFEE;
 import static ru.safin.task10.Product.TEA;
 
 public class Machine {
 
-    private static final Logger logger = Logger.getLogger(Machine.class.getName());
+    private final static Logger logger = Logger.getLogger(Machine.class);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        Handler fileHandler = new FileHandler();
-        logger.setUseParentHandlers(true);
-        logger.addHandler(fileHandler);
         logger.info("Приложение запущено");
 
         System.out.println("Торговый автомат");
@@ -51,6 +45,7 @@ public class Machine {
                         if (i < TEA.getPrice()) {
                             System.out.println("Недостаточно денег");
                             System.out.println("Возврат денег " + i);
+                            logger.warn("Пользователем внесено недостаточно денег. Возврат денег: " + i);
                         }
                         if (i == TEA.getPrice()) {
                             System.out.println("Заберите напиток");
@@ -67,6 +62,7 @@ public class Machine {
                         if (i < COFFEE.getPrice()) {
                             System.out.println("Недостаточно денег");
                             System.out.println("Возврат денег " + i);
+                            logger.warn("Пользователем внесено недостаточно денег. Возврат денег: " + i);
                         }
                         if (i == COFFEE.getPrice()) {
                             System.out.println("Заберите напиток");
@@ -78,12 +74,13 @@ public class Machine {
                         break;
                         default:
                             System.out.println("Нет такого напитка!");
+                            logger.error("Пользователь ввел номер напитка, которого нет");
                             break;
                 }
             }
             catch (InputMismatchException e) {
                 System.err.println("Вы ввели не число!");
-                logger.log(Level.WARNING, "Было введено не числовое значение!");
+                logger.error("Пользователь ввел не числовое значение: " + e.getMessage());
         }
         finally {
             System.err.println("Завершение работы программы!");
