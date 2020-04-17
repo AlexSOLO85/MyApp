@@ -14,9 +14,6 @@ import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static ru.safin.task10.Product.COFFEE;
-import static ru.safin.task10.Product.TEA;
-
 public class Machine {
 
     private final static Logger logger = Logger.getLogger(Machine.class);
@@ -34,49 +31,9 @@ public class Machine {
         System.out.println("Выберите напиток");
 
         Scanner sc = new Scanner(System.in);
-
         try {
             int i = sc.nextInt();
-                switch (i) {
-                    case 1:
-                        System.out.println("Выбран напиток: " + TEA.getName() + " Цена: " + TEA.getPrice());
-                        System.out.println("Внесите деньги");
-                        i = sc.nextInt();
-                        if (i < TEA.getPrice()) {
-                            System.out.println("Недостаточно денег");
-                            System.out.println("Возврат денег " + i);
-                            logger.warn("Пользователем внесено недостаточно денег. Возврат денег: " + i);
-                        }
-                        if (i == TEA.getPrice()) {
-                            System.out.println("Заберите напиток");
-                        }
-                        if (i > TEA.getPrice()) {
-                            int o = i - TEA.getPrice();
-                            System.out.println("Заберите напиток " + "Сдача " + o);
-                        }
-                        break;
-                    case 2:
-                        System.out.println("Выбран напиток: " + COFFEE.getName() + " Цена: " + COFFEE.getPrice());
-                        System.out.println("Внесите деньги");
-                        i = sc.nextInt();
-                        if (i < COFFEE.getPrice()) {
-                            System.out.println("Недостаточно денег");
-                            System.out.println("Возврат денег " + i);
-                            logger.warn("Пользователем внесено недостаточно денег. Возврат денег: " + i);
-                        }
-                        if (i == COFFEE.getPrice()) {
-                            System.out.println("Заберите напиток");
-                        }
-                        if (i > COFFEE.getPrice()) {
-                            int o = i - COFFEE.getPrice();
-                            System.out.println("Заберите напиток " + "Сдача " + o);
-                        }
-                        break;
-                        default:
-                            System.out.println("Нет такого напитка!");
-                            logger.error("Пользователь ввел номер напитка, которого нет");
-                            break;
-                }
+            VariableProduct.variableProduct(i);
             }
             catch (InputMismatchException e) {
                 System.err.println("Вы ввели не число!");

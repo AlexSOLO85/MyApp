@@ -2,7 +2,9 @@ package ru.safin.task10;
 
 public enum Product {
     TEA(1,40, "Чай"),
-    COFFEE(2,50, "Кофе");
+    COFFEE(2,50, "Кофе"),
+    WATER(3, 10, "Вода"),
+    JUICE(4, 60, "Сок");
 
     private int number;
     private int price;
