@@ -20,15 +20,17 @@ public class Mother {
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите продукт");
         MenuMeal.menu();
-        int i;
-        i = sc.nextInt();
-        switch (i) {
-            case 1: child.eat(Meal.CARROT);break;
-            case 2: child.eat(Meal.APPLE);break;
-            case 3: child.eat(Meal.PORRIDGE);break;
-            case 4: child.eat(Meal.JUICE);break;
-            default:
-                throw new IllegalStateException("Нет такого продукта в меню!");
+        int i = sc.nextInt();
+        if (i == 1) {
+            child.eat(Meal.CARROT);
+        } else if (i == 2) {
+            child.eat(Meal.APPLE);
+        } else if (i == 3) {
+            child.eat(Meal.PORRIDGE);
+        } else if (i == 4) {
+            child.eat(Meal.JUICE);
+        } else {
+            throw new IllegalStateException("Нет такого продукта в меню!");
         }
     }
 }
