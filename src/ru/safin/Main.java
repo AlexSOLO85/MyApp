@@ -10,7 +10,7 @@ public class Main {
             String otvet;
             boolean play = true;
             while (play) {
-                Help.main(new String[]{});
+                Help.menuProgram();
                 System.out.println("Выбрать другую задачу? \"y\" - Да, \"n\" - Нет");
                 otvet = sc.next();
                 play = otvet.equals("y");

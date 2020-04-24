@@ -2,14 +2,14 @@ package ru.safin.task21;
 
 import java.util.*;
 
-public class Library {
+public class HomeLibrary {
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
             String e;
             boolean p = true;
             while (p) {
-                CollectionBook.collection();
+                BookLibrary.helpMenu();
                 System.out.println("Вернуться к исходному выбору? \"y\" - Да, \"n\" - Нет");
                 e = sc.next();
                 p = e.equalsIgnoreCase("y");

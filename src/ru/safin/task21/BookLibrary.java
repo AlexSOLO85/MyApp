@@ -3,11 +3,13 @@ package ru.safin.task21;
 import java.io.*;
 import java.util.*;
 
-public class CollectionBook {
+public class BookLibrary {
 
-    static List<Books> booksList = new ArrayList<>();
+    private static List<Book> bookList = new ArrayList<>();
+    private static final String fileName = "files/BookLibrary.txt";
+    private static final String dirName = "files";
 
-    public static void collection() {
+    public static void helpMenu() {
 
         try {
             System.out.println("Домашняя библиотека");
@@ -16,14 +18,14 @@ public class CollectionBook {
             int i = sc.nextInt();
             switch (i) {
                 case 1: System.out.println("Книги в библиотеке:");
-                    showCollection();
+                    showBook();
                     break;
                 case 2:
-                    addCollection();
-                    saveCollection();
+                    addBook();
+                    saveBook();
                     break;
                 case 3:
-                    addCollectionClassic();
+                    addBookClassic();
                     break;
             }
         } catch (Exception ex) {
@@ -31,10 +33,10 @@ public class CollectionBook {
         }
     }
 
-    public static void showCollection() throws IOException {
+    private static void showBook() throws IOException {
 
         try {
-            File f = new File("files/collection.txt");
+            File f = new File(fileName);
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String line = br.readLine();
@@ -48,7 +50,7 @@ public class CollectionBook {
         }
     }
 
-    public static void addCollection() {
+    private static void addBook() {
 
         try {
             Scanner sc = new Scanner(System.in);
@@ -61,17 +63,18 @@ public class CollectionBook {
             author = sc.nextLine();
             System.out.println("Введите год издания: ");
             year = sc.nextInt();
-            booksList = Collections.singletonList(new Books(name, author, year));
+            bookList = new ArrayList<>();
+            bookList.add(new Book(name, author, year));
             System.out.println("Книга добавлена в библиотеку!");
         } catch (Exception ex) {
             System.err.println("Неверно введен год издания. Введите год в числовом виде. Книга не добавлена в библиотеку");
         }
     }
 
-    public static void saveCollection() {
+    private static void saveBook() {
 
         try {
-            File dir = new File("files");
+            File dir = new File(dirName);
             if (!dir.exists()) {
                 if (dir.mkdir()) {
                     System.out.println("Директория создана");
@@ -81,10 +84,10 @@ public class CollectionBook {
                 }
             }
 
-            File f = new File("files/collection.txt");
+            File f = new File(fileName);
             FileWriter fw = new FileWriter(f, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            for (Books book : booksList)
+            for (Book book : bookList)
                 bw.write("Название: " + book.getName()  + " Год: " + book.getYear() + " Автор: " + book.getAuthor() + "\n");
             bw.close();
         } catch (IOException ex) {
@@ -92,14 +95,14 @@ public class CollectionBook {
         }
     }
 
-    public static void addCollectionClassic() {
+    private static void addBookClassic() {
 
-        booksList.add(new Books("Мертвые души" , "Николай Гоголь", 1842));
-        booksList.add(new Books("Хождение по мукам", "Алексей Толстой", 1941));
-        booksList.add(new Books("Мастер и Маргарита", "Михаил Булгаков", 1940));
-        booksList.add(new Books("Война и мир", "Лев Толстой", 1868));
+        bookList.add(new Book("Мертвые души" , "Николай Гоголь", 1842));
+        bookList.add(new Book("Хождение по мукам", "Алексей Толстой", 1941));
+        bookList.add(new Book("Мастер и Маргарита", "Михаил Булгаков", 1940));
+        bookList.add(new Book("Война и мир", "Лев Толстой", 1868));
 
-        saveCollection();
+        saveBook();
 
         System.out.println("В библиотеку добавлена классика");
     }

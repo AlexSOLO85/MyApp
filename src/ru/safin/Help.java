@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 public class Help {
 
-    public static void main(String[] args) {
+    public static void menuProgram() {
         Scanner sc = new Scanner(System.in);
         int i;
         System.out.println("Введите номер задачи от 1 до 16, 0 - описание задач:");
