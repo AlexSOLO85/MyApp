@@ -19,6 +19,7 @@ import ru.safin.task18.Mother;
 import ru.safin.task19.Task19;
 import ru.safin.task20.Task20;
 import ru.safin.task21.HomeLibrary;
+import ru.safin.task22.Task22;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -49,8 +50,9 @@ public class Help {
                     "15 задача: Цензор \n" +
                     "16 задача: Воспитанный ребенок \n" +
                     "17 задача: Работа с файлами \n" +
-                    "18 задача: Рекурсивный обход всех файлов \n +" +
-                    "19 задача: Домашняя библиотека");
+                    "18 задача: Рекурсивный обход всех файлов \n" +
+                    "19 задача: Домашняя библиотека \n" +
+                    "20 задача: Пример кодировки файла");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -72,6 +74,7 @@ public class Help {
             case 17: Task20.main(new String[]{});break;
             case 18: Task19.main(new String[]{});break;
             case 19: HomeLibrary.main(new String[]{});break;
+            case 20: Task22.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }

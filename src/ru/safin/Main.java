@@ -1,5 +1,6 @@
 package ru.safin;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class Main {
                 play = otvet.equals("y");
             }
         }
-        catch (InputMismatchException e) {
+        catch (InputMismatchException | IOException e) {
             System.err.println("Введен не ответ. Программа закрыта!");
         }
     }
