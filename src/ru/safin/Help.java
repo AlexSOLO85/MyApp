@@ -20,6 +20,7 @@ import ru.safin.task19.Task19;
 import ru.safin.task20.Task20;
 import ru.safin.task21.HomeLibrary;
 import ru.safin.task22.Task22;
+import ru.safin.task23.Task23;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -29,7 +30,7 @@ public class Help {
     public static void menuProgram() throws IOException {
         Scanner sc = new Scanner(System.in);
         int i;
-        System.out.println("Введите номер задачи от 1 до 19, 0 - описание задач:");
+        System.out.println("Введите номер задачи от 1 до 21, 0 - описание задач:");
         i = sc.nextInt();
         switch (i) {
             case 0: System.out.println(
@@ -52,7 +53,8 @@ public class Help {
                     "17 задача: Работа с файлами \n" +
                     "18 задача: Рекурсивный обход всех файлов \n" +
                     "19 задача: Домашняя библиотека \n" +
-                    "20 задача: Пример кодировки файла");
+                    "20 задача: Пример кодировки файла \n" +
+                    "21 задача: Кассовый чек");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -75,6 +77,7 @@ public class Help {
             case 18: Task19.main(new String[]{});break;
             case 19: HomeLibrary.main(new String[]{});break;
             case 20: Task22.main(new String[]{});break;
+            case 21: Task23.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }
