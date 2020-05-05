@@ -21,6 +21,7 @@ import ru.safin.task20.Task20;
 import ru.safin.task21.HomeLibrary;
 import ru.safin.task22.Task22;
 import ru.safin.task23.Task23;
+import ru.safin.task25.Weather;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -54,7 +55,8 @@ public class Help {
                     "18 задача: Рекурсивный обход всех файлов \n" +
                     "19 задача: Домашняя библиотека \n" +
                     "20 задача: Пример кодировки файла \n" +
-                    "21 задача: Кассовый чек");
+                    "21 задача: Кассовый чек \n" +
+                    "22 задача: Пример сериализации");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -78,6 +80,7 @@ public class Help {
             case 19: HomeLibrary.main(new String[]{});break;
             case 20: Task22.main(new String[]{});break;
             case 21: Task23.main(new String[]{});break;
+            case 22: Weather.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }
