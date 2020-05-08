@@ -9,8 +9,6 @@
 
 package ru.safin.task26;
 
-import java.util.Arrays;
-
 public class Task26 {
     public static void toLeft(int[][] array) {
 
@@ -34,19 +32,23 @@ public class Task26 {
 
         System.out.println();
 
-        System.out.println("В текущую ячейку поместить значение следующей:");
+        System.out.println("В текущую ячейку поместить значение следующей и последнему элементу присвоить 0:");
+        int length = array[0].length;
+        for (int j = 0; j < array.length; j++) {
+            System.arraycopy(array[j], 1, array[j], 0, length - 1);
+            array[j][length - 1] = 0;
+        }
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length - 1; j++) {
-                System.out.printf("%d\t", array[i][j+1]);
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d\t" , array[i][j]);
             }
             System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        toLeft(new int[][]{
-                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-        });
+        int[][] array = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}};
+        toLeft(array);
     }
 }
