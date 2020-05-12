@@ -22,6 +22,9 @@ import ru.safin.task21.HomeLibrary;
 import ru.safin.task22.Task22;
 import ru.safin.task23.Task23;
 import ru.safin.task25.Weather;
+import ru.safin.task26.Task26;
+import ru.safin.task27.Task27;
+import ru.safin.task28.PersonSuperComparator;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -31,7 +34,7 @@ public class Help {
     public static void menuProgram() throws IOException {
         Scanner sc = new Scanner(System.in);
         int i;
-        System.out.println("Введите номер задачи от 1 до 21, 0 - описание задач:");
+        System.out.println("Введите номер задачи от 1 до 25, 0 - описание задач:");
         i = sc.nextInt();
         switch (i) {
             case 0: System.out.println(
@@ -56,7 +59,10 @@ public class Help {
                     "19 задача: Домашняя библиотека \n" +
                     "20 задача: Пример кодировки файла \n" +
                     "21 задача: Кассовый чек \n" +
-                    "22 задача: Пример сериализации");
+                    "22 задача: Пример сериализации \n" +
+                    "23 задача: Сдвиг элементов массива \n" +
+                    "24 задача: Реверс массива \n" +
+                    "25 задача: Реализация сложного компаратора \n");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -81,6 +87,9 @@ public class Help {
             case 20: Task22.main(new String[]{});break;
             case 21: Task23.main(new String[]{});break;
             case 22: Weather.main(new String[]{});break;
+            case 23: Task26.main(new String[]{});break;
+            case 24: Task27.main(new String[]{});break;
+            case 25: PersonSuperComparator.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }
