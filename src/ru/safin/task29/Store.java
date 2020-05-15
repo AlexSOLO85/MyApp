@@ -7,6 +7,7 @@ import java.util.List;
 public class Store implements Basket {
 
     private final List<Product> products = new LinkedList<>();
+    private String string = "******************************";
 
     public static void main(String[] args) {
 
@@ -26,11 +27,10 @@ public class Store implements Basket {
 
         stores.getProducts();
 
-        stores.getProductQuantity("");
+        stores.getProductQuantity(String.valueOf(stores.products));
 
         stores.clear();
-        showStore("Очистили товары в корзине:", stores.products);
-        System.out.println(stores.products.size());
+        System.out.println(stores.products.isEmpty());
     }
 
     private static void showStore(String title, List<Product> products) {
@@ -38,7 +38,7 @@ public class Store implements Basket {
         for (Object product : products) {
             System.out.println(product);
         }
-        System.out.println("*************************");
+        System.out.println("******************************");
     }
 
     @Override
@@ -67,22 +67,34 @@ public class Store implements Basket {
     @Override
     public void clear() {
         products.clear();
+        System.out.println("Корзина очищена");
     }
 
     @Override
     public List<String> getProducts() {
         List<String> stringList = new ArrayList<>();
         stringList.add(products.toString());
-        System.out.println("Наименование товаров в корзине");
+        System.out.println("Наименование товаров в корзине:");
         for (Product product : products) {
             System.out.println(product.getName());
         }
-        System.out.println();
+        System.out.println(string);
         return stringList;
     }
 
     @Override
     public int getProductQuantity(String product) {
-        return 0;
+        List<String> list = new ArrayList<>();
+        list.add(products.toString());
+        System.out.println("Количество товаров в корзине:");
+        int sum = 0;
+        for (Product prod : products) {
+            sum += prod.getCount();
+            System.out.println(prod.getCount());
+        }
+        System.out.println(string);
+        System.out.println("Сумма товаров в корзине: " + sum);
+        System.out.println(string);
+        return sum;
     }
 }
