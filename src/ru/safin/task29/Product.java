@@ -22,6 +22,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Продукт: " + name + "\t | Количество: " + count;
+        return "Продукт: " + getName() + "\t | Количество: " + getCount();
     }
 }

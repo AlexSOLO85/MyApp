@@ -16,19 +16,21 @@ public class Store implements Basket {
         stores.addProduct("Молоко", 5);
         stores.addProduct("Кофе", 7);
         stores.addProduct("Хлеб", 2);
-        showStore("Добавили товары в корзину", stores.products);
+        showStore("Добавили товары в корзину:", stores.products);
 
         stores.removeProduct("");
-        showStore("Удалили товар из корзины", stores.products);
+        showStore("Удалили товар из корзины:", stores.products);
 
         stores.updateProductQuantity("Чай", 10);
-        showStore("Обновили товар в корзине", stores.products);
+        showStore("Обновили товар в корзине:", stores.products);
 
         stores.getProducts();
 
+        stores.getProductQuantity("");
+
         stores.clear();
+        showStore("Очистили товары в корзине:", stores.products);
         System.out.println(stores.products.size());
-        showStore("Очистили товары в корзине", stores.products);
     }
 
     private static void showStore(String title, List<Product> products) {
@@ -36,7 +38,7 @@ public class Store implements Basket {
         for (Object product : products) {
             System.out.println(product);
         }
-        System.out.println();
+        System.out.println("*************************");
     }
 
     @Override
@@ -71,9 +73,9 @@ public class Store implements Basket {
     public List<String> getProducts() {
         List<String> stringList = new ArrayList<>();
         stringList.add(products.toString());
-        System.out.println("Товары в корзине");
+        System.out.println("Наименование товаров в корзине");
         for (Product product : products) {
-            System.out.println(product);
+            System.out.println(product.getName());
         }
         System.out.println();
         return stringList;
