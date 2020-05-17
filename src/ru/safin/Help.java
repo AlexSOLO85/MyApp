@@ -25,6 +25,8 @@ import ru.safin.task25.Weather;
 import ru.safin.task26.Task26;
 import ru.safin.task27.Task27;
 import ru.safin.task28.PersonSuperComparator;
+import ru.safin.task29.Store;
+import ru.safin.task30.Task30;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -34,7 +36,7 @@ public class Help {
     public static void menuProgram() throws IOException {
         Scanner sc = new Scanner(System.in);
         int i;
-        System.out.println("Введите номер задачи от 1 до 25, 0 - описание задач:");
+        System.out.println("Введите номер задачи от 1 до 27, 0 - описание задач:");
         i = sc.nextInt();
         switch (i) {
             case 0: System.out.println(
@@ -62,7 +64,9 @@ public class Help {
                     "22 задача: Пример сериализации \n" +
                     "23 задача: Сдвиг элементов массива \n" +
                     "24 задача: Реверс массива \n" +
-                    "25 задача: Реализация сложного компаратора \n");
+                    "25 задача: Реализация сложного компаратора \n" +
+                    "26 задача: Корзина интернет магазина \n" +
+                    "27 задача: Фильтрация множества элементов \n");
             break;
 
             case 1: Task01.main(new String[]{});break;
@@ -90,6 +94,8 @@ public class Help {
             case 23: Task26.main(new String[]{});break;
             case 24: Task27.main(new String[]{});break;
             case 25: PersonSuperComparator.main(new String[]{});break;
+            case 26: Store.main(new String[]{});break;
+            case 27: Task30.main(new String[]{});break;
             default:
                 throw new IllegalStateException("Нет такой задачи: " + i);
         }
