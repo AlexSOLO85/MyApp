@@ -70,13 +70,13 @@ public class Store implements Basket {
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
-        Product prod = new Product(product, quantity);
+        int index;
         for (Product p : products) {
             if (p.getName().equals(product)) {
-                products.remove(p);
+                index = products.indexOf(p);
+                products.set(index, new Product(product, quantity));
             }
         }
-        products.add(prod);
     }
 
     @Override
