@@ -4,12 +4,18 @@ public class Product {
     private String name;
     private int count;
 
+    public Product(String name, int count) {
+        this.name = name;
+        this.count = count;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setCount(int count) {
+    public int setCount(int count) {
         this.count = count;
+        return count;
     }
 
     public String getName() {

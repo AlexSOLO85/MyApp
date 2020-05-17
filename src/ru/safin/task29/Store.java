@@ -1,3 +1,15 @@
+/**
+ * Реализовать класс корзины интернет магазина по следующему интерфейсу:
+ * interface Basket {
+ *     void addProduct(String product, int quantity);
+ *     void removeProduct(String product);
+ *     void updateProductQuantity(String product, int quantity);
+ *     void clear();
+ *     List<String> getProducts();
+ *     int getProductQuantity(String product);
+ * }
+ */
+
 package ru.safin.task29;
 
 import java.util.ArrayList;
@@ -7,7 +19,7 @@ import java.util.List;
 public class Store implements Basket {
 
     private final List<Product> products = new LinkedList<>();
-    private String string = "******************************";
+    private final String string = "******************************";
 
     public static void main(String[] args) {
 
@@ -19,10 +31,10 @@ public class Store implements Basket {
         stores.addProduct("Хлеб", 2);
         showStore("Добавили товары в корзину:", stores.products);
 
-        stores.removeProduct("");
+        stores.removeProduct("Хлеб");
         showStore("Удалили товар из корзины:", stores.products);
 
-        stores.updateProductQuantity("Чай", 10);
+        stores.updateProductQuantity("Кофе", 10);
         showStore("Обновили товар в корзине:", stores.products);
 
         stores.getProducts();
@@ -43,25 +55,28 @@ public class Store implements Basket {
 
     @Override
     public void addProduct(String product, int quantity) {
-        Product prod = new Product();
-        prod.setName(product);
-        prod.setCount(quantity);
+        Product prod = new Product(product, quantity);
         products.add(prod);
     }
 
     @Override
     public void removeProduct(String product) {
-        Product prod = new Product();
-        prod.setName(product);
-        products.remove(0);
+        for (Product p : products) {
+            if (p.getName().equals(product)) {
+                products.remove(p);
+            }
+        }
     }
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
-        Product prod = new Product();
-        prod.setName(product);
-        prod.setCount(quantity);
-        products.set(1, prod);
+        Product prod = new Product(product, quantity);
+        for (Product p : products) {
+            if (p.getName().equals(product)) {
+                products.remove(p);
+            }
+        }
+        products.add(prod);
     }
 
     @Override
