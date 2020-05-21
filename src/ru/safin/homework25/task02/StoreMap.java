@@ -12,10 +12,7 @@
 
 package ru.safin.homework25.task02;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StoreMap implements ImplBasketMap {
 
@@ -28,19 +25,12 @@ public class StoreMap implements ImplBasketMap {
 
     @Override
     public void removeProduct(String product) {
-        for (Iterator<String> it = products.keySet().iterator(); it.hasNext();)
-            if (product.equals(it.next()))
-                it.remove();
+        products.remove(product);
     }
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
-        int oldQuantity = 0;
-        for (Map.Entry<String, Integer> map : products.entrySet()) {
-            if (product.equals(map.getKey()))
-                oldQuantity = products.get(product);
-            products.replace(product, oldQuantity, quantity);
-        }
+        products.replace(product, quantity);
     }
 
     @Override
@@ -56,7 +46,9 @@ public class StoreMap implements ImplBasketMap {
             System.out.println("Продукт: " + map.getKey() + "\t | Количество: " + map.getValue());
         }
         System.out.println("******************************");
-        return null;
+        List<String> keyList = new ArrayList<>();
+        keyList.addAll(products.keySet());
+        return keyList;
     }
 
     @Override
@@ -67,6 +59,6 @@ public class StoreMap implements ImplBasketMap {
             }
         }
         System.out.println("******************************");
-        return 0;
+        return products.get(product);
     }
 }
