@@ -1,11 +1,12 @@
 package ru.safin.homework07;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
 
 public class SelectionProduct {
 
-    private final static Logger logger = Logger.getLogger(SelectionProduct.class);
+    private final static Logger logger = LogManager.getLogger(SelectionProduct.class);
 
     public static void variableProduct(int i){
 

@@ -17,13 +17,14 @@
 
 package ru.safin.homework07;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class VendingMachine {
 
-    private final static Logger logger = Logger.getLogger(VendingMachine.class);
+    private final static Logger logger = LogManager.getLogger(VendingMachine.class);
 
     public static void main(String[] args) {
 

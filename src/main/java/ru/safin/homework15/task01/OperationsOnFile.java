@@ -4,7 +4,8 @@
 
 package ru.safin.homework15.task01;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,7 +13,7 @@ import java.nio.file.StandardCopyOption;
 
 public class OperationsOnFile {
 
-    private final static Logger logger = Logger.getLogger(OperationsOnFile.class);
+    private final static Logger logger = LogManager.getLogger(OperationsOnFile.class);
 
     public static void main(String[] args) throws IOException {
 
