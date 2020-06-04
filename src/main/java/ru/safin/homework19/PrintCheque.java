@@ -21,7 +21,7 @@ public class PrintCheque {
 
     private static void readFile(){
 
-        File file = new File("src/main/java/ru/safin/homework19/products.txt");
+        File file = new File("src/main/resources/products.txt");
         System.out.printf("%s %11s %10s %13s\n", "Наименование", "Цена", "Кол-во", "Стоимость");
         System.out.println("==================================================");
 
