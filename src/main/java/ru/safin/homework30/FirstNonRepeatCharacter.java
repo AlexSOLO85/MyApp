@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class FirstNonRepeatCharacter {
     public static void main(String[] args) {
         System.out.println("Введите слово:");
-        Scanner sc = new Scanner(System.in.toString());
+        Scanner sc = new Scanner(System.in);
         String string = sc.nextLine();
         System.out.print("Первый неповторяющийся символ: " + "\"" + getFirstChar(string) + "\"");
     }
