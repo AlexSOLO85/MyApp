@@ -251,8 +251,3 @@ public static void removeItemFromMapByValue(Map<String, Person> map, Person valu
 _This is test message_
 
 Character: s has occurred maximum times in String: 5
-
-
-
-
-
