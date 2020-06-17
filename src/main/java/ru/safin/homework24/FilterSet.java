@@ -1,9 +1,3 @@
-/*
-  Написать метод, который возвращает множество, в котором удалены все элементы четной длины из исходного множества.
-  public Set<String> removeEvenLength(Set<String> set);
-  Например, для множества ["foo", "buzz", "bar", "fork", "bart", "spoon", "!", "dude"] метод вернет ["foo", "bar", "spoon", "!"]
- */
-
 package ru.safin.homework24;
 
 import java.util.Iterator;

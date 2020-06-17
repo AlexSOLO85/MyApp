@@ -1,7 +1,3 @@
-/*
-  Программа для подсчета листовых узлов в двоичном дереве в Java.
- */
-
 package ru.safin.homework32;
 
 import java.util.Scanner;

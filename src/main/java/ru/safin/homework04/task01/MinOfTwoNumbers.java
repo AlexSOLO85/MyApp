@@ -1,7 +1,3 @@
-/*
-  Написать программу для поиска минимального из двух чисел
- */
-
 package ru.safin.homework04.task01;
 
 import java.util.Scanner;

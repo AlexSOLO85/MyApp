@@ -1,9 +1,3 @@
-/*
-  Написать класс PersonSuperComparator,
-  который имплементит Comparator, но умеет сравнивать по двум параметрам , возраст и имя.
-  Класс Person теперь содержит два поля int age и String name
- */
-
 package ru.safin.homework22;
 
 import java.util.Comparator;

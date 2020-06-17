@@ -1,7 +1,3 @@
-/*
-  Написать программу для вывода на экран таблицы умножения
- */
-
 package ru.safin.homework04.task03;
 
 public class MultiplicationTable {

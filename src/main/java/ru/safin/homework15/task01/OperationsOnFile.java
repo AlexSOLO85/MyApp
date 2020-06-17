@@ -1,7 +1,3 @@
-/*
-  Написать программу, которая будет создавать, переименовывать, копировать и удалять файл.
- */
-
 package ru.safin.homework15.task01;
 
 import org.apache.logging.log4j.LogManager;
